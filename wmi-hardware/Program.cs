@@ -14,11 +14,20 @@ class Hardware
         WMIConnection connection = new WMIConnection();
 
         //Get all hardware info iteratively
+        //Get all wmi classes
         foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
         {
             Console.WriteLine("---------- WMI Class: " + wmiclass + " ----------\n");
-            foreach (var item in WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + wmiclass, wmiclass))
-                Console.WriteLine(item.Key + ": " + item.Value);
+            //Get all devices of wmi class
+            foreach(var device in WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + wmiclass, wmiclass))
+            {
+                //Print all device properties
+                foreach(var property in device)
+                {
+                    Console.WriteLine(property.Key + ": " + property.Value);
+                }
+                Console.WriteLine("\n");
+            }
             Console.WriteLine("\n");
         }
 

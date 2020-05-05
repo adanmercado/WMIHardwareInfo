@@ -7,10 +7,11 @@ namespace wmi_hardware
 {
     class WMIResult
     {
-        public static List<KeyValuePair<string, string>> GetPropertyValuesForWMIClass(WMIConnection connection, string query, string className)
+        public static List<Dictionary<string, string>> GetPropertyValuesForWMIClass(WMIConnection connection, string query, string className)
         {
             ManagementScope connectionScope = connection.ConnectionScope;
-            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>();
+            List<Dictionary<string, string>> devices = new List<Dictionary<string, string>>();
+            List<string> properties = WMIClasses.GetPropertiesForWMIClass(className);
             SelectQuery msQuery = new SelectQuery(query);
             ManagementObjectSearcher searchProcedure = new ManagementObjectSearcher(connectionScope, msQuery);
 
@@ -18,14 +19,16 @@ namespace wmi_hardware
             {
                 foreach (ManagementObject item in searchProcedure.Get())
                 {
-                    foreach (string property in WMIClasses.GetPropertiesForWMIClass(className))
+                    Dictionary<string, string> device = new Dictionary<string, string>();
+                    foreach (string property in properties)
                     {
                         try {
-                            properties.Add(new KeyValuePair<string, string>(property, item[property].ToString()));
+                            device.Add(property, item[property].ToString());
                         }
                         catch (SystemException) {
                         }
                     }
+                    devices.Add(device);
                 }
             }
             catch (ManagementException e)
@@ -33,7 +36,7 @@ namespace wmi_hardware
                 Console.WriteLine("WMIResult Error: " + e.Message.ToString());
             }
 
-            return properties;
+            return devices;
         }
     }
 }
