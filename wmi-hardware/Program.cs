@@ -23,7 +23,7 @@ class Hardware
             {
                 //Print all device properties
                 foreach(var property in device)
-                {
+               { 
                     Console.WriteLine(property.Key + ": " + property.Value);
                 }
                 Console.WriteLine("\n");

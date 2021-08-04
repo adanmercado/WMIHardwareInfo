@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace wmi_hardware
 {
-    class WMIClasses
+    public class WMIClasses
     {
         public static List<string> GetPropertiesForWMIClass(string WMIClassName)
         {

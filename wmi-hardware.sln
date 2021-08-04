@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wmi-hardware", "wmi-hardware\wmi-hardware.csproj", "{29966F07-AFD7-4572-8484-2104F4A00DBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wmi-hardwareTests", "wmi-hardwareTests\wmi-hardwareTests.csproj", "{242089C5-8319-4598-8F58-1335563A59EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{29966F07-AFD7-4572-8484-2104F4A00DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29966F07-AFD7-4572-8484-2104F4A00DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29966F07-AFD7-4572-8484-2104F4A00DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242089C5-8319-4598-8F58-1335563A59EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242089C5-8319-4598-8F58-1335563A59EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242089C5-8319-4598-8F58-1335563A59EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242089C5-8319-4598-8F58-1335563A59EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
