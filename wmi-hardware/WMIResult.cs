@@ -23,6 +23,16 @@ namespace wmi_hardware
                     foreach (string property in properties)
                     {
                         try {
+                            //Old:
+                            //device.Add(property, item[property].ToString());
+
+                            //Mohammad Yasir Ammar: to solve Screenshot 1 first-run problem 
+                            if (item[property] == null)
+                            {
+                                //To get out of the for each loop
+                                //without going through the problem that stopped the program
+                                break;
+                            }
                             device.Add(property, item[property].ToString());
                         }
                         catch (SystemException) {
