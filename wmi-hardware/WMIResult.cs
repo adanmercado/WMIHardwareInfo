@@ -41,7 +41,8 @@ namespace wmi_hardware
                             }
                             device.Add(property, item[property].ToString());
                         }
-                        catch (SystemException) {
+                        catch (SystemException)
+                        {
                         }
                     }
                     devices.Add(device);

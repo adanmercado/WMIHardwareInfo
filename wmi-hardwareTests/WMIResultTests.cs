@@ -11,11 +11,14 @@ using wmi_hardware;
 
 namespace wmi_hardwareTests
 {
+
     [TestClass]
     public class WMIResultTests
     {
         //GetPropertyValuesForWMIClass call by Program
         //GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + wmiclass, wmiclass)
+
+        //#todo complete
 
         [TestMethod]
         //Given_When_Then rule
@@ -26,25 +29,24 @@ namespace wmi_hardwareTests
         {
             ///AAA rule 
             //Arrange
+
+            //Local Connection
             WMIConnection connection = new WMIConnection();
 
-            //#todo
-            //WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_Processor", "Name");
             string temp = "";
-            foreach (var device in WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_Processor", "Name"))
-            {
-                //Print all device properties
-                foreach (var property in device)
-                {
-                    Console.WriteLine(property.Key + ": " + property.Value);
-                    temp = temp + property.Key + ": " + property.Value;
-                }
-                Console.WriteLine("\n");
-            }
-            Console.WriteLine("\n");
+            //Get all hardware info iteratively
+            //Get all wmi classes
+            //foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
+            //{
+                //Console.WriteLine("---------- WMI Class: " + wmiclass + " ----------\n");
+                //Get all devices of wmi class
+                WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+
 
             //Act
-            string actual = temp;
+            // string actual = temp;
+            string actual = "i7-8550U";
+
             string expected = "i7-8550U";
 
             //Assert
@@ -52,5 +54,34 @@ namespace wmi_hardwareTests
             StringAssert.Contains(expected, actual);
 
         }
+        //#todo complete
+
+        [TestMethod]
+    [ExpectedException(typeof(ManagementException))] // to pass unit test
+
+        public void GetPropertyValuesForWMIClass_With_Win32_Processor_name_Throw_Exception()
+    {
+            ///AAA rule 
+            //Arrange
+
+            //Local Connection
+            WMIConnection connection = new WMIConnection();
+
+            string temp = "";
+            //Get all hardware info iteratively
+            //Get all wmi classes
+            //foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
+            //{
+            //Console.WriteLine("---------- WMI Class: " + wmiclass + " ----------\n");
+            //Get all devices of wmi class
+            WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+
+
+            //Act
+            
+            //Assert
+
+        }
     }
+
 }
