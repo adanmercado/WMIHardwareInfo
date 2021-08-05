@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Management;
 using wmi_hardware;
 
@@ -33,7 +34,6 @@ namespace wmi_hardwareTests
             //Local Connection
             WMIConnection connection = new WMIConnection();
 
-            string temp = "";
             //Get all hardware info iteratively
             //Get all wmi classes
             //foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
@@ -42,16 +42,18 @@ namespace wmi_hardwareTests
                 //Get all devices of wmi class
                 WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
 
+            List<Dictionary<string, string>> actualList = WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+
+
 
             //Act
-            // string actual = temp;
-            string actual = "i7-8550U";
+            //string actual = "i7-8550U";
 
             string expected = "i7-8550U";
 
             //Assert
             //Assert.AreEqual(expected, actual);
-            StringAssert.Contains(expected, actual);
+            CollectionAssert.Contains(actualList,expected);
 
         }
         //#todo complete
@@ -60,7 +62,7 @@ namespace wmi_hardwareTests
     [ExpectedException(typeof(ManagementException))] // to pass unit test
 
         public void GetPropertyValuesForWMIClass_With_Win32_Processor_name_Throw_Exception()
-    {
+        {
             ///AAA rule 
             //Arrange
 

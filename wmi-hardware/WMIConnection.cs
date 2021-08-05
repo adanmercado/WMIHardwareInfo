@@ -55,7 +55,7 @@ namespace wmi_hardware
             }
             return connectScope;
         }
-
+        //old
         // private void EstablishConnection(string userName, string password, string domain, string machineName)
         public void EstablishConnection(string userName, string password, string domain, string machineName)
 

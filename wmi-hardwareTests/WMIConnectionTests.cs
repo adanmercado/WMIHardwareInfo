@@ -16,6 +16,21 @@ namespace wmi_hardwareTests
     {
         //Given_When_Then
 
+        [TestMethod]
+        public void EstablishConnection_With_default_Return_success()
+        {
+            //AAA
+
+            //Arrange
+            WMIConnection sut = new WMIConnection(); //sut: System Under Test
+            sut.EstablishConnection(null, null, null, Environment.MachineName);
+
+            //Act
+            //Assert
+
+            //It is correct if it does not return an exception error
+        }
+
         //Success
         [TestMethod]
         public void SetConnectionScope_With_default_Return_success(){
@@ -32,10 +47,10 @@ namespace wmi_hardwareTests
             //It is correct if it does not return an exception error
 
         }
-        //#todo complete
         [TestMethod]
         public void SetConnectionOptions_When_Then()
         {
+            //It is correct if it does not return an exception error
 
         }
     }
