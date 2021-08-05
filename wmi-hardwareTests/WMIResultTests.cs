@@ -1,7 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Management;
 using wmi_hardware;
 
 //Fork by: Mohammad Yaser Ammar
@@ -16,71 +14,54 @@ namespace wmi_hardwareTests
     [TestClass]
     public class WMIResultTests
     {
-        //GetPropertyValuesForWMIClass call by Program
-        //GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + wmiclass, wmiclass)
-
-        //#todo complete
 
         [TestMethod]
         //Given_When_Then rule
-
-        //GetPropertyValuesForWMIClass(@"\root\CIMV2, "SELECT * FROM Win32_Processor" , "Name")
-
         public void GetPropertyValuesForWMIClass_With_Win32_Processor_name_Return_i7_8550U()
         {
             ///AAA rule 
             //Arrange
-
-            //Local Connection
             WMIConnection connection = new WMIConnection();
 
-            //Get all hardware info iteratively
-            //Get all wmi classes
-            //foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
-            //{
-                //Console.WriteLine("---------- WMI Class: " + wmiclass + " ----------\n");
-                //Get all devices of wmi class
-                WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+            //Get all devices of wmi class
+            //draft when try
+            //List<Dictionary<string, string>> actualList = WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_Processor", "Win32_Processor");
 
-            List<Dictionary<string, string>> actualList = WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+            string actual = "";
+            foreach (var device in WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_Processor", "Win32_Processor"))
+            {
+                //Print all device properties
+                foreach (var property in device)
+                {
+                    //Console.WriteLine(property.Key + ": " + property.Value);
+                    actual = actual + property.Key + ": " + property.Value;
+                }
+            }
+                //Act
+                string expected = "i7-8550U";
 
-
-
-            //Act
-            //string actual = "i7-8550U";
-
-            string expected = "i7-8550U";
 
             //Assert
-            //Assert.AreEqual(expected, actual);
-            CollectionAssert.Contains(actualList,expected);
+            StringAssert.Contains(actual, expected);
 
         }
-        //#todo complete
 
         [TestMethod]
-    [ExpectedException(typeof(ManagementException))] // to pass unit test
-
+        [ExpectedException(typeof(NullReferenceException))] // to pass unit test
         public void GetPropertyValuesForWMIClass_With_Win32_Processor_name_Throw_Exception()
         {
             ///AAA rule 
             //Arrange
 
-            //Local Connection
             WMIConnection connection = new WMIConnection();
 
-            string temp = "";
-            //Get all hardware info iteratively
-            //Get all wmi classes
-            //foreach (string wmiclass in WMIClasses.GetAllWMIClasses())
-            //{
-            //Console.WriteLine("---------- WMI Class: " + wmiclass + " ----------\n");
-            //Get all devices of wmi class
-            WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Name");
+
+            WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM " + "Win32_Processor", "Win64_Processor");
+            //Win64_Processor is error but target to throw Exception
 
 
             //Act
-            
+
             //Assert
 
         }
