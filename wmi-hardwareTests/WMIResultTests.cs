@@ -33,12 +33,12 @@ namespace wmi_hardwareTests
                 //Print all device properties
                 foreach (var property in device)
                 {
-                    //Console.WriteLine(property.Key + ": " + property.Value);
                     actual = actual + property.Key + ": " + property.Value;
                 }
             }
+
                 //Act
-                string expected = "i7-8550U";
+                string expected = "i7-8550U";//Of course, it varies according to the type of processor that will be tested
 
 
             //Assert

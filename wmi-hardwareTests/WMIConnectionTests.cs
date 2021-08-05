@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Management;
 using wmi_hardware;
 
 //Fork by: Mohammad Yaser Ammar
@@ -44,12 +43,6 @@ namespace wmi_hardwareTests
             //Act
             //Assert
 
-            //It is correct if it does not return an exception error
-
-        }
-        [TestMethod]
-        public void SetConnectionOptions_When_Then()
-        {
             //It is correct if it does not return an exception error
 
         }

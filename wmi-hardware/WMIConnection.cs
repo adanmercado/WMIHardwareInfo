@@ -1,7 +1,6 @@
 using System;
 using System.Management;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace wmi_hardware
 {
