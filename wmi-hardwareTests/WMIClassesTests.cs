@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using wmi_hardware;
+using FluentAssertions;
 
 //Fork by: Mohammad Yaser Ammar
 //https://github.com/MohammadYAmmar/
@@ -24,16 +25,17 @@ namespace wmi_hardwareTests
             //System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Mohammad Yaser Ammar\Documents\GitHub\WMIHardwareInfo\wmi-hardwareTests\bin\wmiclasses\WMIClassProperties.xml'.
             //Then but file here #todo !!
 
-
             string expected = "Name";
             List<string> expectedList = new List<string> { "Name", "NumberOfCores", "NumberOfLogicalProcessors" };
-
 
             //Assert
             CollectionAssert.Contains(actualList, expected);
 
-            //#todo with other library
+            //Filled with Assert
             //CollectionAssert.Contains(actualList, expectedList);
+
+            //But succeeded with FluentAssertions
+            actualList.Should().Contain(expectedList);
         }
 
         //Success

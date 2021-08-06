@@ -14,7 +14,8 @@ After watching one of the courses on YouTube, there are two main rules:
 It is a way to write the name of the test method, for example, there is a method in the project that is its name
  `GetPropertiesForWMIClass `
 
-After apply rule the test method is `GetPropertiesForWMIClass_When_ClassWin32_Processor_Return_name_CPU`
+After apply rule the test method is 
+`GetPropertiesForWMIClass_When_ClassWin32_Processor_Return_name_CPU`
 
 Another example of a method
  `GetPropertyValuesForWMIClass`
@@ -48,7 +49,6 @@ I had socket programming experience and know about WMI, so I started making gene
 For the record, you can make the method work if you define this before the method, and I will explain this in the next paragraphs.
 
 In this picture, we can see the result of the test that you took
-#todo add image
 
 ![alt text](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing/blob/master/Screenshot%203%20result%20of%20Test%20Explorer.png "Result of Test explore")
 
@@ -98,17 +98,37 @@ After using the Fluent Assertions library, you will become
             //FluentAssertions
             actual.Should().Contain(expected);
 ```
+
 We notice the difference in clarity between the two methods, as with the Fluent library, it is closer to the English language without going into the finer details as in the Assert types.
 
 
 The way to add it is by going to a store, then searching for nuget as in the picture
-#todo
 
-![alt text]( "Picture of nuget") 
-
+![alt text](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing/blob/master/Screenshot%203%20Fluent.png "Picture of nuget") 
 
 
-🔜
+One of the benefits of this library for me is the ease of verification which ensures greater accuracy in the examination where the greater focus of the exam is. This example in the project didn't work for me checking in multiple ways with Assert! But it simply worked with FluentAssertions!
+
+```
+ [TestMethod]
+        public void GetPropertiesForWMIClass_When_ClassWin32_Processor_Return_name_CPU()
+        {
+
+            List<string> actualList = WMIClasses.GetPropertiesForWMIClass("Win32_Processor");
+
+            string expected = "Name";
+            List<string> expectedList = new List<string> { "Name", "NumberOfCores", "NumberOfLogicalProcessors" };
+
+            //Assert
+            CollectionAssert.Contains(actualList, expected);
+
+            //Filled with Assert
+            //CollectionAssert.Contains(actualList, expectedList);
+
+            //But succeeded with FluentAssertions
+            actualList.Should().Contain(expectedList);
+        }
+```
 
 # Code Coverage
 In (Visual Studio 2019) this feature is considered paid and not in the community version
