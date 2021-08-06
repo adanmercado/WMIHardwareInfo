@@ -6,7 +6,20 @@ This project is my desire to experience developing my skills and supporting open
 Project fork from: [https://github.com/adanmercado/WMIHardwareInfo(https://github.com/adanmercado/WMIHardwareInfo)
 
 # Table of contents
-#todo by https://stackoverflow.com/questions/18244417/how-do-i-create-some-kind-of-table-of-content-in-github-wiki
+<!--ts-->
+   * [Unit Testing rules](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#unit-testing-rules)
+      * Given_When_Then
+      * AAA
+   * [Unit Testing in C#](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#unit-testing-in-c)
+   * [My experience with my first project](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#my-experience-with-my-first-project)
+   * [Assert](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#assert)
+   * [C# library: Fluent Assertions](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#c-library-fluent-assertions)
+   * [Code Coverage](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#code-coverage)
+   * [Test Driven Development (TDD)](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#Test-Driven-Development-(TDD))
+   * [Problems with the first run](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#problems-with-the-first-run)
+   * [Shortcuts while typing tests](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#shortcuts-while-typing-tests)
+<!--te-->
+
 
 # Unit Testing rules
 After watching one of the courses on YouTube, there are two main rules:
@@ -135,6 +148,12 @@ In (Visual Studio 2019) this feature is considered paid and not in the community
 
 #todo 🔜 to free tools
 
+# Test Driven Development (TDD)
+#todo 🔜
+
+![alt text](https://marsner.com/wp-content/uploads/test-driven-development-TDD.png "TDD")
+
+
 # Problems with the first run
 When I first run the project before adding anything I encountered a problem as in the picture:
 
@@ -169,10 +188,10 @@ Write (prop) + Tab = to create property by fast shortcut
 Write (cw) + Tab = to create statement of Console for Write Line
 
 sut: System under test
-
 ---
+
 This project took the time: #todo
-Everything I wrote is from my writing and understanding at this time about unit tests without copying from sources where I tried to explain the method as I like to read it for myself later when reviewing it 🧐
+Everything I wrote is from my writing and understanding at this time about unit tests without copying text from sources where I tried to explain the method as I like to read it for myself later when reviewing it 🧐
 ---
 My GitHub:
 [https://github.com/MohammadYAmmar](https://github.com/MohammadYAmmar)
