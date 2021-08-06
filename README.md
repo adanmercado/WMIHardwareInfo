@@ -7,9 +7,24 @@ This project is my desire to experience developing my skills and supporting open
 Project fork from:  [https://github.com/adanmercado/WMIHardwareInfo(https://github.com/adanmercado/WMIHardwareInfo)
 
 # Table of contents
+=================
 
+<!--ts-->
+   * [Unit Testing rules](#Unit Testing rules)
+      * [Given_When_Then](#Given_When_Then)
+      * [AAA](#AAA)
+   * [UnitTesting in C#](#Unit Testing in C#)
+   * [Usage](#usage)
+
+<!--te-->
+
+
+Unit Testing rules
+=====
 # Unit Testing rules 
 After watching one of the courses on YouTube, there are two main rules:
+====
+Given_When_Then
 1. Given_When_Then
 It is a way to write the name of the test method, for example there is a method in the project that is its name
  `GetPropertiesForWMIClass `
@@ -21,7 +36,8 @@ Another example of a method
 The name of test method name is 
 `GetPropertyValuesForWMIClass_With_Win32_Processor_name_Return_i7_8550U` 
 Because this result is supposed to be obtained, from reading the name of the test function we know the objection of it, the input and the expected result
-
+AAA
+=====
 2. AAA
 
 AAA: Arrange , Act, Assert
@@ -29,7 +45,7 @@ Which are the steps to write the test where with Arrange we know the inputs and 
 It has been implemented in the project's test methods.
 
 
-
+====
 # Unit Testing in C#
 
 #todo
@@ -58,16 +74,16 @@ The solution on the first run did not show all the results and seemed incomplete
 
 The solution was to modify the code to be smarter and become
 
-
-`if (item[property] == null)`
-`                            {`
-`                                //To get out of the for each loop`
-`                                //without going through the problem that stopped the program`
-`                                //break;`
-`                                continue;`
-`                            }`
-`                            device.Add(property, item[property].ToString());`
-`                        }`
+```if (item[property] == null)
+                            {`
+                                //To get out of the for each loop
+                                //without going through the problem that stopped the program`
+                                //break;
+                                continue;
+                            }
+                            device.Add(property, item[property].ToString());`
+                        }
+```
 
 where put (continue) is true to complement what's inside the WMI class
 
