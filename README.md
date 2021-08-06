@@ -32,13 +32,14 @@ It has been implemented in the project's test methods.
 
 # Unit Testing in C#
 
-#todo
+To add a test project to the solution 
 1. Select solution in a project and > `Add > New project`
-2. Add tests to name like `wmi-hardwareTests`
+2. The option is `MSTest Test Project`
+3. Add test project with name like `wmi-hardwareTests`
 
 
 
-# My experience of learning in a practical way with my first project, which is this
+# My experience with my first project
 
 After fixing the problem of the project to run it, I wrote a paragraph about it 📝
 I've created a test project inside Solution 🧪, which contains three test classes that direct each file to the main project.
@@ -49,10 +50,64 @@ For the record, you can make the method work if you define this before the metho
 In this picture, we can see the result of the test that you took
 #todo add image
 
-![alt text]( "Result of Test explore")
+![alt text](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing/blob/master/Screenshot%203%20result%20of%20Test%20Explorer.png "Result of Test explore")
 
+# Assert
+Verification functions differ according to the type of data you will be comparing
+1. Assert
+2. StringAssert
+3. CollectionAssert
 
 # C# library: Fluent Assertions
+
+In order to know what is the benefit of adding a library to the test when it already exists?
+It is simplicity, which is what we will notice now in this example
+
+```
+[TestMethod]
+        //Given_When_Then rule
+        public void GetPropertyValuesForWMIClass_With_Win32_Processor_name_Return_i7_8550U()
+        {
+            ///AAA rule 
+            
+            //Arrange
+            WMIConnection connection = new WMIConnection();
+            //Get all devices of wmi class
+            string actual = "";
+            foreach (var device in WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_Processor", "Win32_Processor"))
+            {
+                foreach (var property in device)
+                {
+                    actual = actual + property.Key + ": " + property.Value;
+                }
+            }
+
+            //Act
+             string expected = "i7-8550U";//Of course, it varies according to the type of processor that will be tested
+
+            //Assert
+            StringAssert.Contains(actual, expected);
+        }
+```
+If we focus on the verification and comparison part, which is Assert.
+After using the Fluent Assertions library, you will become
+```
+            //Assert
+            StringAssert.Contains(actual, expected);
+
+            //FluentAssertions
+            actual.Should().Contain(expected);
+```
+We notice the difference in clarity between the two methods, as with the Fluent library, it is closer to the English language without going into the finer details as in the Assert types.
+
+
+The way to add it is by going to a store, then searching for nuget as in the picture
+#todo
+
+![alt text]( "Picture of nuget") 
+
+
+
 🔜
 
 # Code Coverage
@@ -95,6 +150,9 @@ Write (cw) + Tab = to create statement of Console for Write Line
 
 sut: System under test
 
+---
+This project took the time: #todo
+Everything I wrote is from my writing and understanding at this time about unit tests without copying from sources where I tried to explain the method as I like to read it for myself later when reviewing it 🧐
 ---
 My GitHub:
 [https://github.com/MohammadYAmmar](https://github.com/MohammadYAmmar)

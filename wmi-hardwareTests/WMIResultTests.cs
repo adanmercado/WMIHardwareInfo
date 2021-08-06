@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using wmi_hardware;
@@ -38,6 +39,11 @@ namespace wmi_hardwareTests
 
             //Assert
             StringAssert.Contains(actual, expected);
+
+            //FluentAssertions
+            //using FluentAssertions;
+
+            actual.Should().Contain(expected);
         }
 
         [TestMethod]
@@ -57,7 +63,6 @@ namespace wmi_hardwareTests
             //Act
 
             //Assert
-
         }
     }
 
