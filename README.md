@@ -1,6 +1,6 @@
-# WMIHardwareInfo
-Get hardware information easily with C#
-
+# WMIHardwareInfo with Unit Testing 🧪
+Get hardware information easily with C#, I have added unit tests to it to test the original project
+---
 This project is my desire to experience developing my skills and supporting open source projects, As I'm learning unit tests I've thought of using a project that I didn't implement and test to take on the role of tester while programming projects. Based on that, I share this experience with you :)
 
 Project fork from: [https://github.com/adanmercado/WMIHardwareInfo(https://github.com/adanmercado/WMIHardwareInfo)
@@ -15,14 +15,13 @@ Project fork from: [https://github.com/adanmercado/WMIHardwareInfo(https://githu
    * [Assert](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#assert)
    * [C# library: Fluent Assertions](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#c-library-fluent-assertions)
    * [Code Coverage](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#code-coverage)
-   * [Test Driven Development (TDD)](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#Test-Driven-Development-(TDD))
+   * [Test Driven Development (TDD)](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#Test-Driven-Development-TDD)
    * [Problems with the first run](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#problems-with-the-first-run)
    * [Shortcuts while typing tests](https://github.com/MohammadYAmmar/WMIHardwareInfo-with-Unit-Testing#shortcuts-while-typing-tests)
 <!--te-->
 
-
 # Unit Testing rules
-After watching one of the courses on YouTube, there are two main rules:
+After watching one of the [courses on YouTube(https://www.youtube.com/playlist?list=PLwj1YcMhLRN28xijrXMO255JHsO3csus-) , there are two main rules:
 1. Given_When_Then
 It is a way to write the name of the test method, for example, there is a method in the project that is its name
  `GetPropertiesForWMIClass `
@@ -144,12 +143,14 @@ One of the benefits of this library for me is the ease of verification which ens
 ```
 
 # Code Coverage
-In (Visual Studio 2019) this feature is considered paid and not in the community version
+In (Visual Studio 2019) this feature is considered paid and not in the community version.
 
-#todo 🔜 to free tools
+#todo test free tools 🔜
 
 # Test Driven Development (TDD)
-#todo 🔜
+With this approach, we focus on writing the test first before the feature is present in the original project of course it will fail the first time.
+Then we go and write the code in the method to match the unit test solution.
+It allows us to write test-oriented code. This is a picture from the internet showing the process:
 
 ![alt text](https://marsner.com/wp-content/uploads/test-driven-development-TDD.png "TDD")
 
@@ -190,14 +191,18 @@ Write (cw) + Tab = to create statement of Console for Write Line
 sut: System under test
 ---
 
-This project took the time: #todo
+This project took the time: 12 Hours to 8-7-2021 (720M to 6)
+
 Everything I wrote is from my writing and understanding at this time about unit tests without copying text from sources where I tried to explain the method as I like to read it for myself later when reviewing it 🧐
+
+There is a part of the [course on YouTube(https://www.youtube.com/playlist?list=PLwj1YcMhLRN28xijrXMO255JHsO3csus-) that is not covered here, I may add it at a later time or in another project as appropriate.
 ---
 My GitHub:
 [https://github.com/MohammadYAmmar](https://github.com/MohammadYAmmar)
 My LinkedIn:
 [https://www.linkedin.com/in/mohammad-y-ammar/](https://www.linkedin.com/in/mohammad-y-ammar/)
+If you have seen the description and test codes, may can you recommend my programming skills or unit tests on LinkedIn? :)
 
-This site is nice for writing descriptions [stackedit](https://stackedit.io/)
+If you liked it, do not forget to give the project a star ⭐🌟 to encourage us to continue.
 
 Thank you for reading all of this to benefit you instead of just copying and pasting ✂!
