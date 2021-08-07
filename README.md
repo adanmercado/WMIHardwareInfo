@@ -1,10 +1,11 @@
 # WMIHardwareInfo with Unit Testing 🧪
 
 Get hardware information easily with C#, I have added unit tests to it to test the original project
----
+
+
 This project is my desire to experience developing my skills and supporting open source projects, As I'm learning unit tests I've thought of using a project that I didn't implement and test to take on the role of tester while programming projects. Based on that, I share this experience with you :)
 
-Project fork from: [https://github.com/adanmercado/WMIHardwareInfo(https://github.com/adanmercado/WMIHardwareInfo)
+Project fork from: https://github.com/adanmercado/WMIHardwareInfo
 
 # Table of contents
 <!--ts-->
@@ -198,10 +199,12 @@ Everything I wrote is from my writing and understanding at this time about unit 
 
 There is a part of the course on YouTube that is not covered here, I may add it at a later time or in another project as appropriate.
 
-The course that I watched in Al-Arabi on YouTube to learn the tests, and then I made this test project: https://www.youtube.com/playlist?list=PLwj1YcMhLRN28xijrXMO255JHsO3csus-
----
+The course that I watched in Arabic on YouTube to learn the tests, and then I made this test project: https://www.youtube.com/playlist?list=PLwj1YcMhLRN28xijrXMO255JHsO3csus-
+
+
 My GitHub:
 [https://github.com/MohammadYAmmar](https://github.com/MohammadYAmmar)
+
 My LinkedIn:
 [https://www.linkedin.com/in/mohammad-y-ammar/](https://www.linkedin.com/in/mohammad-y-ammar/)
 If you have seen the description and test codes, may can you recommend my programming skills or unit tests on LinkedIn? :)
