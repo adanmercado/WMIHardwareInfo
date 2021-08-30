@@ -1,11 +1,10 @@
 using System;
 using System.Management;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace wmi_hardware
 {
-    class WMIConnection
+    public class WMIConnection
     {
         ManagementScope connectionScope;
         ConnectionOptions options;
@@ -55,8 +54,10 @@ namespace wmi_hardware
             }
             return connectScope;
         }
+        //old
+        // private void EstablishConnection(string userName, string password, string domain, string machineName)
+        public void EstablishConnection(string userName, string password, string domain, string machineName)
 
-        private void EstablishConnection(string userName, string password, string domain, string machineName)
         {
             options = SetConnectionOptions();
             if (domain != null || userName != null)

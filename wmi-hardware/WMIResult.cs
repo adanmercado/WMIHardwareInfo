@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Management;
+
+//Fork by: Mohammad Yaser Ammar
+//https://github.com/MohammadYAmmar/
+//Feture 0: solving project problems
+//There was a problem when I first ran the project in a function, I fixed it before adding the test project
 
 namespace wmi_hardware
 {
-    class WMIResult
+    public class WMIResult
     {
         public static List<Dictionary<string, string>> GetPropertyValuesForWMIClass(WMIConnection connection, string query, string className)
         {
@@ -23,9 +27,21 @@ namespace wmi_hardware
                     foreach (string property in properties)
                     {
                         try {
+                            //Old:
+                            //device.Add(property, item[property].ToString());
+
+                            //Mohammad Yasir Ammar: to solve Screenshot 1 first-run problem 
+                            if (item[property] == null)
+                            {
+                                //To get out of the for each loop
+                                //without going through the problem that stopped the program
+                                //break;
+                                continue;
+                            }
                             device.Add(property, item[property].ToString());
                         }
-                        catch (SystemException) {
+                        catch (SystemException)
+                        {
                         }
                     }
                     devices.Add(device);
