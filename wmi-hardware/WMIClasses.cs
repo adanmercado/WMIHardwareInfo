@@ -8,10 +8,9 @@ namespace wmi_hardware
     {
         public static List<string> GetPropertiesForWMIClass(string WMIClassName)
         {
-            string filename = Directory.GetCurrentDirectory() + "\\..\\..\\wmiclasses\\WMIClassProperties.xml";
             List<string> propertiesList = new List<string>();
             XmlDocument xmldoc = new XmlDocument();
-            xmldoc.Load(filename);
+            xmldoc.LoadXml(Properties.Resources.wmiclasses);
 
             XmlNode wmiClassNode = xmldoc.SelectSingleNode("wmi/class[@name='" + WMIClassName + "']");
             foreach (XmlNode node in wmiClassNode.ChildNodes)
@@ -22,12 +21,11 @@ namespace wmi_hardware
 
         public static List<string> GetAllWMIClasses()
         {
-            string filename = Directory.GetCurrentDirectory() + "\\..\\..\\wmiclasses\\WMIClassProperties.xml";
             List<string> wmiClasses = new List<string>();
             XmlDocument xmldoc = new XmlDocument();
-            xmldoc.Load(filename);
+            xmldoc.LoadXml(Properties.Resources.wmiclasses);
 
-            foreach(XmlNode node in xmldoc.SelectNodes("wmi/class"))
+            foreach (XmlNode node in xmldoc.SelectNodes("wmi/class"))
                 wmiClasses.Add(node.Attributes["name"].Value);
 
             return wmiClasses;
