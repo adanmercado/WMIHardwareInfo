@@ -2,6 +2,32 @@
 
 Get hardware information easily with C#.
 
+# How to use
+
+To get the hardware information, it is necessary to establish a connection through wich all queries will be executed, ash shown below:
+
+```
+WMIConnection connection = new WMIConnection();
+```
+
+Later, all the information of a device can be obtanined with the **GetPropertyValuesForWMIClass function** this will return a list of dictionaries since the computer can have more than one device of the same type installed, for example multiple hard disk drives, each dictionary in the list contains the information related to a device.
+
+Take the following code as an example to get the information of the hard drives installed in the computer.
+
+```
+List<Dictionary<string, string>> disks = WMIResult.GetPropertyValuesForWMIClass(connection, "SELECT * FROM Win32_DiskDrive", "Win32_DiskDrive");
+try {
+    foreach(var disk in disks) {
+        foreach(var property in disk) {
+            Console.WriteLine(property.Key + ": " + property.Value);
+        }
+    }
+    Console.WriteLine("\n");
+} catch (SystemException) { }
+```
+
+For more information on how WMI works, see [Querying WMI.](https://docs.microsoft.com/en-us/windows/win32/wmisdk/querying-wmi)
+
 # Unit Testing rules
 1. Given_When_Then
 It is a way to write the name of the test method, for example, there is a method in the project that is its name
